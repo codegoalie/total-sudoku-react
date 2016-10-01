@@ -1,5 +1,5 @@
 .grid {
-  width: 235px;
+  width: 30em;
   display: flex;
   flex-flow: wrap;
   align-self: center;

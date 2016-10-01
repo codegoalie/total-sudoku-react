@@ -4,9 +4,9 @@ import './Grid.css';
 
 export default class Grid extends Component {
   render() {
-    var nums = this.props.grid.map((i) => {
+    var nums = this.props.grid.map((v, i) => {
       return (
-        <Cell key={i} value={i+1} />
+        <Cell key={i} value={v} />
       );
     });
     return (

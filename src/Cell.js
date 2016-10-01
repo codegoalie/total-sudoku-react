@@ -3,8 +3,19 @@ import './Cell.css'
 
 export default class Cell extends Component {
   render() {
-    return (
-      <input type="text" readOnly value={this.props.value} />
-    )
+    if (this.props.value === 0) {
+      return (
+        <input type="text"  />
+      )
+    } else {
+      return (
+        <input
+          type="text"
+          className="initial"
+          readOnly
+          value={this.props.value}
+        />
+      )
+    }
   }
 }

@@ -6,7 +6,7 @@ import GridContainer from './GridContainer.js';
 let App = ({ dispatch  }) => {
   return (
     <div className="App">
-      <h1>Hello, world!</h1>
+      <h1>Total Sudoku</h1>
       <GridContainer />
     </div>
   );
