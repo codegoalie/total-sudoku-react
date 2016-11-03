@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import './Cell.css'
 
 export default class Cell extends Component {
+  componentDidMount() {
+    if (this.props.shouldFocus) {
+      this.textInput.focus()
+    }
+  }
+
   render() {
     if (this.props.value === 0) {
       return (
-        <input type="text"  />
+        <input
+          id={this.props.index}
+          type="text"
+          ref={(input) => this.textInput = input}
+        />
       )
     } else {
       return (

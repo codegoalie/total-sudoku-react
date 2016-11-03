@@ -6,7 +6,7 @@ export default class Grid extends Component {
   render() {
     var nums = this.props.grid.map((v, i) => {
       return (
-        <Cell key={i} value={v} />
+        <Cell key={i} value={v} shouldFocus={i === this.props.cursor} />
       );
     });
     return (

@@ -3,19 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
 import reducers from './reducers';
 
-const logger = store => next => action => {
-  console.group(action.type);
-  console.info('dispatching', action);
-  let result = next(action);
-  console.log('next state', store.getState());
-  console.groupEnd(action.type);
-  return result;
-};
-
-let store = applyMiddleware(logger)(createStore)(reducers);
+const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>

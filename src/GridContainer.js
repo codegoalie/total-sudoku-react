@@ -3,7 +3,8 @@ import Grid from './Grid.js';
 
 const mapStateToProps = (state) => {
   return {
-    grid: state.grid
+    grid: state.grid,
+    cursor: state.cursor
   }
 }
 
