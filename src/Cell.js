@@ -14,6 +14,7 @@ export default class Cell extends Component {
         <input
           id={this.props.index}
           type="text"
+          onKeyUp={(event) => this.props.keyHandler(event, this.props.index)}
           ref={(input) => this.textInput = input}
         />
       )

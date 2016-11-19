@@ -1,16 +1,13 @@
 const cursor = (state = 2, action) => {
   switch(action.type) {
-    case "GO_LEFT":
-      if (state % 9 === 0) {
-
-      }
-      break
-    case "GO_RIGHT":
-      break
-    case "GO_DOWN":
-      break
-    case "GO_UP":
-      break
+    case "CURSOR_LEFT":
+      return 1
+    case "CURSOR_RIGHT":
+      return 6
+    case "CURSOR_DOWN":
+      return 8
+    case "CURSOR_UP":
+      return 10
     default:
       return state;
   }
