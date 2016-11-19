@@ -6,6 +6,11 @@ input[type=text] {
   text-align: center;
 }
 
+input[type=text].error {
+  background-color: #f19292;
+}
+
+
 input[type=text].initial {
   background-color: #e5e5e5;
 }

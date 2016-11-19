@@ -1,21 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react'
 import './Cell.css'
 
-export default class Cell extends Component {
-  render() {
-    if (this.props.value === 0) {
-      return (
-        <input type="text"  />
-      )
-    } else {
-      return (
-        <input
-          type="text"
-          className="initial"
-          readOnly
-          value={this.props.value}
-        />
-      )
-    }
+function Cell(props) {
+  if (props.initialValue === 0) {
+    return (
+      <input
+        className={props.valid ? '' : 'error'}
+        type="text"
+        value={props.currentValue === 0 ? '' : props.currentValue}
+      />
+    )
   }
+  return (
+    <input
+      type="text"
+      className="initial"
+      readOnly
+      value={props.currentValue}
+    />
+  )
+}
+export default Cell
+
+Cell.propTypes = {
+  initialValue: React.PropTypes.number,
+  currentValue: React.PropTypes.number,
+  valid: React.PropTypes.bool,
 }
